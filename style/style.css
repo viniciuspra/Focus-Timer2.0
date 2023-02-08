@@ -66,6 +66,16 @@ button {
 
 .controls button {
   padding: 0 2rem;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.controls button:hover {
+  transform: scale(0.98);
+}
+
+.controls button:active {
+  transform: scale(0.95);
 }
 
 .sounds {
@@ -81,26 +91,18 @@ button {
 }
 
 .sounds-button button {
-  width: 138px;
-  height: 152px;
+  width: 13.8rem;
+  height: 15.2rem;
   background: #E1E1E6;
   border-radius: 24px;
   cursor: pointer;
+  transition: .2s ;
 }
 
-.sounds-button button:hover {
+.forest:hover {
   transform: scale(0.98);
 }
 
-svg:focus path {
-  fill: white;
-}
-
-.sounds-button img:hover {
-
-}
-
-.sounds-button button:focus{
-  fill: white;
-  background: #02799D;
+.sounds-button button:active {
+  transform: scale(0.95);
 }
