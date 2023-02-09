@@ -2,8 +2,20 @@ import {
   playButton,
   stopButton,
   addFiveButton,
-  removeFiveButton
-} from './elements.js'
+  removeFiveButton,
+  forestAudioButton,
+  rainAudioButton,
+  coffeeAudioButton,
+  fireplaceAudioButton
+} from "./elements.js"
+
+function svgFill(icon) {
+  icon.querySelector('svg').style.fill = "white"
+}
+
+function bgButton(icon) {
+  icon.style.backgroundColor = "#02799D"
+}
 
 export default function Events( { timer } ) {
   playButton.addEventListener("click", () => {
@@ -18,4 +30,22 @@ export default function Events( { timer } ) {
   removeFiveButton.addEventListener("click", () => {
     timer.removeFive()
   })
+  forestAudioButton.addEventListener("click", () => {
+    svgFill(forestAudioButton)
+    bgButton(forestAudioButton)
+
+  })
+  rainAudioButton.addEventListener("click", () => {
+    svgFill(rainAudioButton)
+    bgButton(rainAudioButton)
+  })
+  coffeeAudioButton.addEventListener("click", () => {
+    svgFill(coffeeAudioButton)
+    bgButton(coffeeAudioButton)
+  })
+  fireplaceAudioButton.addEventListener("click", () => {
+    svgFill(fireplaceAudioButton)
+    bgButton(fireplaceAudioButton)
+  })
+
 }
