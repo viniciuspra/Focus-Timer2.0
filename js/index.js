@@ -3,18 +3,12 @@ import Timer from './timer.js'
 import Sounds from './sounds.js'
 import {
   minutesDisplay,
-  secondsDisplay,
-  forestAudioButton,
-  rainAudioButton,
-  coffeeAudioButton,
-  fireplaceAudioButton,
-  minutes
+  secondsDisplay
 } from "./elements.js"
 
 const timer = Timer({ 
   minutesDisplay, 
-  secondsDisplay,
-  minutes
+  secondsDisplay
 })
 
 const sound = Sounds()

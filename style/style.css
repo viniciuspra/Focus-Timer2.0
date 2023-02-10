@@ -17,8 +17,8 @@ header {
   position: absolute;
   display: flex;
   align-items: center;
-  margin: 1.5rem;
-  gap: 1.5rem;
+  margin: 2rem 3rem;
+  gap: 2rem;
 }
 
 header h1 {
@@ -97,10 +97,6 @@ button {
   border-radius: 24px;
   cursor: pointer;
   transition: .2s ;
-}
-
-.forest:hover {
-  transform: scale(0.98);
 }
 
 .sounds-button button:active {

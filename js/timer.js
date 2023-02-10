@@ -2,11 +2,10 @@ import Sounds from "./sounds.js"
 
 export default function Timer( {
   minutesDisplay,
-  secondsDisplay,
-  minutes
+  secondsDisplay
 } ) {
   
-  minutes = Number(minutesDisplay.textContent)
+  let minutes = Number(minutesDisplay.textContent)
   let TimerTimeOut
   let check = false
   
