@@ -106,3 +106,11 @@ button {
 .sounds-button button:active {
   transform: scale(0.95);
 }
+
+.enable {
+  background-color: #02799D !important;
+}
+
+.enable svg path {
+  fill: white;
+}
