@@ -3,7 +3,7 @@ import Timer from './timer.js'
 import Sounds from './sounds.js'
 import {
   minutesDisplay,
-  secondsDisplay
+  secondsDisplay,
 } from "./elements.js"
 
 const timer = Timer({ 
@@ -14,5 +14,3 @@ const timer = Timer({
 const sound = Sounds()
 
 Events( { timer, sound } )
-
-

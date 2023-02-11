@@ -1,0 +1,80 @@
+@media (max-width: 768px) {
+  header {
+    width: 90vw;
+  }
+  #btn-mobile {
+    width: 24px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+  }
+  
+  #Switch:hover {
+    transform: scale(0.98)
+  }
+
+  #Switch:active {
+    transform: scale(0.95);
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+  }
+
+  .controls button {
+    padding: 0 .6rem;
+  }
+  .sounds {
+    display: none;
+  }
+  .active {
+    display: block !important;
+    margin-top: 4rem;
+    animation: slide-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+  }
+
+  .sounds-button {
+    display: grid ;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .timer {
+    animation: slide-right 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+  .sounds.active {
+    display: none;
+  }
+
+  @keyframes slide-left {
+  0% {
+    transform: translateX(1000px);
+  }
+  100% {
+     transform: translateX(0px);
+  }}
+  @keyframes slide-right {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+     transform: translateX(0px);
+  }
+}
+}

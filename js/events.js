@@ -6,10 +6,11 @@ import {
   forestAudioButton,
   rainAudioButton,
   coffeeAudioButton,
-  fireplaceAudioButton
+  fireplaceAudioButton,
+  btnMobile,
+  soundsButton,
+  TimerDisplay,
 } from "./elements.js"
-
-
 
 export default function Events( { timer, sound } ) {
   playButton.addEventListener("click", () => {
@@ -25,6 +26,25 @@ export default function Events( { timer, sound } ) {
   removeFiveButton.addEventListener("click", () => {
     timer.removeFive()
   })
+  btnMobile.addEventListener("click", () => {
+    toggleMenu()
+    SwitchImg()
+  })
+
+  function toggleMenu() {
+    soundsButton.classList.toggle('active')
+    TimerDisplay.classList.toggle('hide')
+  }
+
+  let imgAtual = "assets/tempo-clock.png"
+  let imgAnterior = "assets/area-sons.png"
+  function SwitchImg() {
+    document.querySelector("#Switch").src = imgAtual 
+    let aux = imgAtual
+    imgAtual = imgAnterior
+    imgAnterior = aux
+  }
+
   forestAudioButton.addEventListener("click", () => {
      verifyEnable(
        forestAudioButton,
