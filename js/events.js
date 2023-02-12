@@ -10,9 +10,21 @@ import {
   btnMobile,
   soundsButton,
   TimerDisplay,
+  ThemeMode,
+  initialColor,
+  darkMode,
+  root
 } from "./elements.js"
 
 export default function Events( { timer, sound } ) {
+
+    let clicked = false
+    let Sun = "assets/sun.svg"
+    let Moon = "assets/moon.svg"
+    let imgAtual = "assets/tempo-clock.png"
+    let imgAnterior = "assets/area-sons.png"
+    let mode = document.querySelector("#mode")
+
   playButton.addEventListener("click", () => {
     timer.execCountdown()
     sound.pressButton()
@@ -30,20 +42,6 @@ export default function Events( { timer, sound } ) {
     toggleMenu()
     SwitchImg()
   })
-
-  function toggleMenu() {
-    soundsButton.classList.toggle('active')
-    TimerDisplay.classList.toggle('hide')
-  }
-
-  let imgAtual = "assets/tempo-clock.png"
-  let imgAnterior = "assets/area-sons.png"
-  function SwitchImg() {
-    document.querySelector("#Switch").src = imgAtual 
-    let aux = imgAtual
-    imgAtual = imgAnterior
-    imgAnterior = aux
-  }
 
   forestAudioButton.addEventListener("click", () => {
      verifyEnable(
@@ -80,6 +78,21 @@ export default function Events( { timer, sound } ) {
       coffeeAudioButton
     )
      SoundManager.fireplace()
+  })
+
+  ThemeMode.addEventListener("click", () => {
+    setTimeout(() => {
+      if (clicked == false) {
+        mode.src = Moon
+        changeColors(darkMode)
+        clicked = true
+      } else {
+        mode.src = Sun
+        changeColors(initialColor)
+        clicked = false
+      }
+      ThemeMode.blur()
+    }, "100")
   })
 
   function verifyEnable(sound1, sound2, sound3, sound4) {
@@ -140,4 +153,25 @@ export default function Events( { timer, sound } ) {
       }
     }
   }
+
+    function toggleMenu() {
+      soundsButton.classList.toggle("active")
+      TimerDisplay.classList.toggle("hide")
+    }
+
+    function SwitchImg() {
+      document.querySelector("#Switch").src = imgAtual
+      let aux = imgAtual
+      imgAtual = imgAnterior
+      imgAnterior = aux
+    }
+
+  function changeColors(colors) {
+    Object.keys(colors).map(key => {
+      root.style.setProperty(trasformKeys(key), colors[key])
+    })
+  }
+
+  const trasformKeys = (key) => "--" + key.replace(/([A-Z])/, "-$1").toLowerCase()
+
 }

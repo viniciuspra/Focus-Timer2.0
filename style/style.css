@@ -6,24 +6,38 @@
 
 :root {
   font-size: 62.5%;
+  --bg-body: white;
+  --text-color: #323238;
+  --bg-sound: #E1E1E6;
+  --enable-button: #02799D;
+  --svg-fill: #323238;
+  --svg-enable: white; 
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   height: 100vh;
+  background: var(--bg-body);
 }
 
 header {
+  width: 95vw;
   position: absolute;
   display: flex;
   align-items: center;
-  margin: 2rem 3rem;
+  margin: 3rem 3rem;
   gap: 2rem;
 }
 
 header h1 {
-  color: #323238;
+  color: var(--text-color);
   font-size: 2.3rem;
+}
+
+#theme-mode {
+  position: absolute;
+  right: 0;
+  transition: .8s all;
 }
 
 #btn-mobile {
@@ -51,7 +65,7 @@ main {
   line-height: 14.8rem;
   text-align: center;
   text-transform: uppercase;
-  color: #323238;
+  color: var(--text-color);
 }
 button {
   background: none;
@@ -95,7 +109,7 @@ button {
 .sounds-button button {
   width: 13.8rem;
   height: 15.2rem;
-  background: #E1E1E6;
+  background: var(--bg-sound);
   border-radius: 24px;
   transition: .2s ;
 }
@@ -105,9 +119,27 @@ button {
 }
 
 .enable {
-  background-color: #02799D !important;
+  background-color: var(--enable-button) !important;
+}
+
+svg path {
+  fill: var(--svg-fill);
 }
 
 .enable svg path {
-  fill: white;
+  fill: var(--svg-enable);
+}
+
+#theme-mode:hover {
+  transform: scale(0.98);
+  transform: rotate(90deg);
+}
+
+#theme-mode:focus {
+  transform: scale(0.95);
+  transform: rotate(-90deg);
+}
+
+.controls svg path {
+  fill: var(--svg-fill);
 }
