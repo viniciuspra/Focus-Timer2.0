@@ -48,12 +48,6 @@ Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figm
 
 <br>
 
-## :rocket: Agradecimento
-
-Gostaria de agradecer à [Rocketseat](https://rocketseat.com.br) por propor este desafio e me permitir aprender e aprimorar minhas habilidades em programação.
-
-<br>
-
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT.
